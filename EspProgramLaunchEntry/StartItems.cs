@@ -13,16 +13,15 @@ namespace EspProgramLaunchEntry
         {
             Add(new StartItem() {
                 Name = "name1",
-                ////"D:/etp/Projects/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png"
-                PicPath = @"file:///D:/etp/Projects/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
                 ExePath = "" });
             Add(new StartItem() {
                 Name = "name2",
-                PicPath = @"file:///D:/etp/Projects/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
                 ExePath = "" });
             Add(new StartItem() {
                 Name = "name3",
-                PicPath = @"file:///D:/etp/Projects/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
                 ExePath = "" });
         }
     }

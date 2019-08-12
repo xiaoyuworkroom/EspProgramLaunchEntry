@@ -56,7 +56,8 @@
     </ApplicationDefinition>
     <Compile Include="StartItem.cs" />
     <Compile Include="StartItems.cs" />
-    <Compile Include="Utility.cs" />
+    <Compile Include="Utilitys\Utility.cs" />
+    <Compile Include="Utilitys\UtilityXML.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

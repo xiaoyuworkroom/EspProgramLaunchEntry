@@ -17,8 +17,8 @@
     <Window.Resources>
         <local:StartItemPicPathToPhotoPathConverter x:Key="pic2photo" />
         <DataTemplate x:Key="listItemViewTemplate">
-            <Grid Margin="2">
-                <Image Source="{Binding Path=PicPath, Converter={StaticResource  pic2photo}}"/>
+            <Grid Margin="0">
+                <Image Width="289" Height="783" Source="{Binding Path=PicPath, Converter={StaticResource  pic2photo}}"/>
             </Grid>
         </DataTemplate>
     </Window.Resources>
@@ -27,7 +27,7 @@
             <RowDefinition Height="51"/>
             <RowDefinition Height="44"/>
             <RowDefinition Height="202"/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -37,20 +37,26 @@
             <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btnClose" Grid.Row="1" Grid.Column="2" Background="Transparent" BorderBrush="Transparent" Click="btnClose_Click" >
+        <Button x:Name="btnClose" Grid.Row="1" Grid.Column="2" Background="Transparent" 
+                BorderBrush="Transparent" Click="btnClose_Click" >
             <Button.Content>
                 <Image  Source="photos/close.png"></Image>
             </Button.Content>
         </Button>
 
         <ListBox x:Name="listBoxStartItems" Grid.Row="3" Grid.Column="1"
-                 ItemTemplate ="{StaticResource listItemViewTemplate}"
+                 ItemTemplate ="{StaticResource listItemViewTemplate}" 
+
+                 SelectionChanged="StartItemListSelection"
+                 Background="Transparent"
+                 BorderBrush="Transparent"
+                 BorderThickness="0"
                  >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>            
+            </ListBox.ItemsPanel>
         </ListBox>
     </Grid>
 </Window>

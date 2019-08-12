@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EspProgramLaunchEntry
 {
@@ -36,6 +26,25 @@ namespace EspProgramLaunchEntry
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void StartItemListSelection(object sender, SelectionChangedEventArgs e)
+        {
+            var listBox = sender as ListBox;
+            var t = listBox.ActualHeight;
+            StartItem startItem = (sender as ListBox)?.SelectedItem as StartItem;
+            if (startItem != null)
+            {
+                try
+                {
+                    string exePath = startItem.ExePath;
+                    Process.Start(exePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(string.Format("配置文件信息错误: {0}", ex.Message), "异常信息");
+                }
+            }
         }
     }
 }
