@@ -27,7 +27,7 @@
             <RowDefinition Height="51"/>
             <RowDefinition Height="44"/>
             <RowDefinition Height="202"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -44,6 +44,8 @@
             </Button.Content>
         </Button>
 
+
+
         <ListBox x:Name="listBoxStartItems" Grid.Row="3" Grid.Column="1"
                  ItemTemplate ="{StaticResource listItemViewTemplate}" 
 
@@ -58,5 +60,20 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
+
+
+        <Button x:Name="btnLeft" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Background="Transparent" 
+                BorderBrush="Transparent" Click="btnLeft_Click" >
+            <Button.Content>
+                <Image Source="photos/close.png"></Image>
+            </Button.Content>
+
+        </Button>
+        <Button x:Name="btnRight" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" Background="Transparent" 
+                BorderBrush="Transparent" Click="btnRight_Click" >
+            <Button.Content>
+                <Image Source="photos/close.png"></Image>
+            </Button.Content>
+        </Button>
     </Grid>
 </Window>

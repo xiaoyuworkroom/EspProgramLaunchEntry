@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace EspProgramLaunchEntry
 {
@@ -45,6 +46,39 @@ namespace EspProgramLaunchEntry
                     MessageBox.Show(string.Format("配置文件信息错误: {0}", ex.Message), "异常信息");
                 }
             }
+        }
+
+        private void btnLeft_Click(object sender, RoutedEventArgs e)
+        {
+            ScrollViewer scrollViewer = FV<ScrollViewer>(this.listBoxStartItems);
+            scrollViewer.PageLeft();
+            
+        }
+
+        private void btnRight_Click(object sender, RoutedEventArgs e)
+        {
+            ScrollViewer scrollViewer = FV<ScrollViewer>(this.listBoxStartItems);
+            scrollViewer.PageRight();
+        }
+
+        public static ci FV<ci>(DependencyObject o)
+        where ci : DependencyObject
+        {
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(o); i++)
+            {
+                DependencyObject c = VisualTreeHelper.GetChild(o, i);
+
+                if (c != null && c is ci)
+                    return (ci)c;
+                else
+                {
+                    ci cc = FV<ci>(c);
+
+                    if (cc != null)
+                        return cc;
+                }
+            }
+            return null;
         }
     }
 }
