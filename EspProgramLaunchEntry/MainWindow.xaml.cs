@@ -51,8 +51,7 @@ namespace EspProgramLaunchEntry
         private void btnLeft_Click(object sender, RoutedEventArgs e)
         {
             ScrollViewer scrollViewer = FV<ScrollViewer>(this.listBoxStartItems);
-            scrollViewer.PageLeft();
-            
+            scrollViewer.PageLeft();            
         }
 
         private void btnRight_Click(object sender, RoutedEventArgs e)
