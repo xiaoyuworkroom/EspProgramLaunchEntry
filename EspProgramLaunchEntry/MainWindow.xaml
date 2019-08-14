@@ -18,23 +18,19 @@
         <local:StartItemPicPathToPhotoPathConverter x:Key="pic2photo" />
         <DataTemplate x:Key="listItemViewTemplate">
             <Grid Margin="0">
-                <Image Width="289" Height="783" Source="{Binding Path=PicPath, Converter={StaticResource  pic2photo}}"/>
+                <!--Width="289" Height="783"-->
+                <Image Source="{Binding Path=PicPath, Converter={StaticResource  pic2photo}}"/>
             </Grid>
         </DataTemplate>
 
         <Style x:Key="PhotoListItem" TargetType="{x:Type ListBoxItem}">
-            <Setter Property="MaxHeight" Value="783" />
-            <Setter Property="MinHeight" Value="783" />
             <Setter Property="Opacity" Value=".75" />
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
             <Style.Triggers>
                 <EventTrigger RoutedEvent="Mouse.MouseEnter">
                     <EventTrigger.Actions>
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimation
-                                    Duration="0:0:0.2"
-                                    Storyboard.TargetProperty="MaxHeight"
-                                    To="85" />
                                 <DoubleAnimation
                                     Duration="0:0:0.2"
                                     Storyboard.TargetProperty="Opacity"
@@ -48,9 +44,6 @@
                     <EventTrigger.Actions>
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimation
-                                    Duration="0:0:1"
-                                    Storyboard.TargetProperty="MaxHeight" />
                                 <DoubleAnimation
                                     Duration="0:0:0.2"
                                     Storyboard.TargetProperty="Opacity" />
@@ -66,9 +59,9 @@
             <RowDefinition Height="51"/>
             <RowDefinition Height="44"/>
             <RowDefinition Height="202"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="44"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -85,28 +78,34 @@
             </Button.Content>
         </Button>
 
+
         <ListBox x:Name="listBoxStartItems" Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"
+                 HorizontalAlignment="Center"
                  ItemTemplate ="{StaticResource listItemViewTemplate}" 
                  ItemContainerStyle="{DynamicResource PhotoListItem}"
                  SelectionChanged="StartItemListSelection"
                  Background="Transparent"
                  BorderBrush="Transparent"
                  BorderThickness="0"
+                 Padding="0"
+                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
                  >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                Width="1200"
+                                />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-
 
         <Button x:Name="btnLeft" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Background="Transparent" 
                 BorderBrush="Transparent" Click="btnLeft_Click" >
             <Button.Content>
                 <Image Source="Photos\listBoxLeft.png"></Image>
             </Button.Content>
-
         </Button>
         <Button x:Name="btnRight" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center" Background="Transparent" 
                 BorderBrush="Transparent" Click="btnRight_Click" >

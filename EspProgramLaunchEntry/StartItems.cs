@@ -13,73 +13,68 @@ namespace EspProgramLaunchEntry
         {
             Add(new StartItem() {
                 Name = "name1",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/firstlesson.png",
                 ExePath = "" });
             Add(new StartItem() {
                 Name = "name2",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/secondlesson.png",
                 ExePath = "" });
             Add(new StartItem() {
                 Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/secondlesson.png",
                 ExePath = "" });
             Add(new StartItem()
             {
                 Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/secondlesson.png",
+                ExePath = ""
+            });
+            Add(new StartItem()
+            {
+                Name = "name1",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/firstlesson.png",
+                ExePath = ""
+            });
+            Add(new StartItem()
+            {
+                Name = "name2",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/secondlesson.png",
                 ExePath = ""
             });
             Add(new StartItem()
             {
                 Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/thirdlesson.png",
                 ExePath = ""
             });
             Add(new StartItem()
             {
                 Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/fourthlesson.png",
+                ExePath = ""
+            });
+            Add(new StartItem()
+            {
+                Name = "name1",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/firstlesson.png",
+                ExePath = ""
+            });
+            Add(new StartItem()
+            {
+                Name = "name2",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/secondlesson.png",
                 ExePath = ""
             });
             Add(new StartItem()
             {
                 Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/thirdlesson.png",
                 ExePath = ""
-            }); Add(new StartItem()
+            });
+            Add(new StartItem()
             {
                 Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
-                ExePath = ""
-            }); Add(new StartItem()
-            {
-                Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
-                ExePath = ""
-            }); Add(new StartItem()
-            {
-                Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
-                ExePath = ""
-            }); Add(new StartItem()
-            {
-                Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
-                ExePath = ""
-            }); Add(new StartItem()
-            {
-                Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
-                ExePath = ""
-            }); Add(new StartItem()
-            {
-                Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
-                ExePath = ""
-            }); Add(new StartItem()
-            {
-                Name = "name3",
-                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/first.png",
+                PicPath = @"file:///C:/zxhome/Works/EspProgramLaunchEntry/EspProgramLaunchEntry/Photos/fourthlesson.png",
                 ExePath = ""
             });
         }

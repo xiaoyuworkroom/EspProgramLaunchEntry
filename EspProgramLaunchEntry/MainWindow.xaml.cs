@@ -21,7 +21,7 @@ namespace EspProgramLaunchEntry
         public void Init()
         {
             startItems = new StartItems();
-            listBoxStartItems.ItemsSource = startItems;
+            listBoxStartItems.ItemsSource = startItems;            
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -51,7 +51,7 @@ namespace EspProgramLaunchEntry
         private void btnLeft_Click(object sender, RoutedEventArgs e)
         {
             ScrollViewer scrollViewer = FV<ScrollViewer>(this.listBoxStartItems);
-            scrollViewer.PageLeft();            
+            scrollViewer.PageLeft();
         }
 
         private void btnRight_Click(object sender, RoutedEventArgs e)
