@@ -21,13 +21,54 @@
                 <Image Width="289" Height="783" Source="{Binding Path=PicPath, Converter={StaticResource  pic2photo}}"/>
             </Grid>
         </DataTemplate>
+
+        <Style x:Key="PhotoListItem" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="MaxHeight" Value="783" />
+            <Setter Property="MinHeight" Value="783" />
+            <Setter Property="Opacity" Value=".75" />
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Duration="0:0:0.2"
+                                    Storyboard.TargetProperty="MaxHeight"
+                                    To="85" />
+                                <DoubleAnimation
+                                    Duration="0:0:0.2"
+                                    Storyboard.TargetProperty="Opacity"
+                                    To="1.0" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Duration="0:0:1"
+                                    Storyboard.TargetProperty="MaxHeight" />
+                                <DoubleAnimation
+                                    Duration="0:0:0.2"
+                                    Storyboard.TargetProperty="Opacity" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Grid ShowGridLines="false">
         <Grid.RowDefinitions>
             <RowDefinition Height="51"/>
             <RowDefinition Height="44"/>
             <RowDefinition Height="202"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -44,11 +85,9 @@
             </Button.Content>
         </Button>
 
-
-
-        <ListBox x:Name="listBoxStartItems" Grid.Row="3" Grid.Column="1"
+        <ListBox x:Name="listBoxStartItems" Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"
                  ItemTemplate ="{StaticResource listItemViewTemplate}" 
-
+                 ItemContainerStyle="{DynamicResource PhotoListItem}"
                  SelectionChanged="StartItemListSelection"
                  Background="Transparent"
                  BorderBrush="Transparent"
@@ -62,17 +101,17 @@
         </ListBox>
 
 
-        <Button x:Name="btnLeft" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Background="Transparent" 
+        <Button x:Name="btnLeft" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Background="Transparent" 
                 BorderBrush="Transparent" Click="btnLeft_Click" >
             <Button.Content>
-                <Image Source="photos/close.png"></Image>
+                <Image Source="Photos\listBoxLeft.png"></Image>
             </Button.Content>
 
         </Button>
-        <Button x:Name="btnRight" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" Background="Transparent" 
+        <Button x:Name="btnRight" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center" Background="Transparent" 
                 BorderBrush="Transparent" Click="btnRight_Click" >
             <Button.Content>
-                <Image Source="photos/close.png"></Image>
+                <Image Source="Photos\listBoxRight.png"></Image>
             </Button.Content>
         </Button>
     </Grid>

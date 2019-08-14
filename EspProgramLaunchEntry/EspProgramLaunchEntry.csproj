@@ -101,5 +101,9 @@
     <Resource Include="Photos\bg.png" />
     <Resource Include="Photos\close.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\listBoxLeft.png" />
+    <Resource Include="Photos\listBoxRight.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
