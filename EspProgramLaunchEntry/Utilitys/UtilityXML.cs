@@ -10,32 +10,37 @@ namespace EspProgramLaunchEntry.Utilitys
 {
     public class UtilityXML
     {
-        public static void SaveToXml(string filePath, object sourceObj, Type type, string xmlRootName)
+        public static void SaveToXml(string filePath, object sourceObj, Type type)
         {
             if (!string.IsNullOrEmpty(filePath) && sourceObj != null)
             {
                 type = type != null ? type : sourceObj.GetType();
 
+                if (!File.Exists(filePath))
+                {
+                    var newFile = File.Create(filePath);
+                    newFile.Close();
+                }
+
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
-                    System.Xml.Serialization.XmlSerializer xmlSerializer = string.IsNullOrEmpty(xmlRootName) ?
-                        new System.Xml.Serialization.XmlSerializer(type) :
-                        new System.Xml.Serialization.XmlSerializer(type, new XmlRootAttribute(xmlRootName));
+                    System.Xml.Serialization.XmlSerializer xmlSerializer = 
+                        new System.Xml.Serialization.XmlSerializer(type) ;
                     xmlSerializer.Serialize(writer, sourceObj);
                 }
             }
         }
 
-        public static object LoadFromXml(string filePath, Type type)
+        public static T LoadFromXml<T> (string filePath) where T : class
         {
-            object result = null;
+            T result = default(T);
 
             if (File.Exists(filePath))
             {
                 using (StreamReader reader = new StreamReader(filePath))
                 {
-                    System.Xml.Serialization.XmlSerializer xmlSerializer = new System.Xml.Serialization.XmlSerializer(type);
-                    result = xmlSerializer.Deserialize(reader);
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+                    result = (T) xmlSerializer.Deserialize(reader);
                 }
             }
 

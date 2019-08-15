@@ -102,8 +102,8 @@
     <Resource Include="Photos\close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photos\listBoxLeft.png" />
-    <Resource Include="Photos\listBoxRight.png" />
+    <Resource Include="Photos\button_sel_l_nor.png" />
+    <Resource Include="Photos\button_sel_l_sel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

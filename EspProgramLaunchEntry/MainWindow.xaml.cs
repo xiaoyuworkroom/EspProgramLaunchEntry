@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EspProgramLaunchEntry.Utilitys;
+using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,7 +21,7 @@ namespace EspProgramLaunchEntry
 
         public void Init()
         {
-            startItems = new StartItems();
+            startItems  = UtilityXML.LoadFromXml<StartItems>(@"startItems.xml");
             listBoxStartItems.ItemsSource = startItems;            
         }
 

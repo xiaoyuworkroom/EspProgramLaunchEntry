@@ -11,12 +11,18 @@ namespace EspProgramLaunchEntry
     {
         public static BitmapImage CreateBitmapImage(string imgUrl)
         {
-            BitmapImage bmp = new BitmapImage();
-            bmp.BeginInit();
-            bmp.UriSource = new Uri(imgUrl);
-            bmp.EndInit();
-
-            return bmp;
+            try
+            {
+                BitmapImage bmp = new BitmapImage();
+                bmp.BeginInit();
+                bmp.UriSource = new Uri(imgUrl);
+                bmp.EndInit();
+                return bmp;
+            }
+            catch (Exception)
+            {
+                return null;
+            }           
         }
 
 

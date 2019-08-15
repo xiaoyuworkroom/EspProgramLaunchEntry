@@ -17,7 +17,7 @@
     <Window.Resources>
         <local:StartItemPicPathToPhotoPathConverter x:Key="pic2photo" />
         <DataTemplate x:Key="listItemViewTemplate">
-            <Grid Margin="0">
+            <Grid Margin="8,0,8,0">
                 <!--Width="289" Height="783"-->
                 <Image Source="{Binding Path=PicPath, Converter={StaticResource  pic2photo}}"/>
             </Grid>
@@ -25,7 +25,7 @@
 
         <Style x:Key="PhotoListItem" TargetType="{x:Type ListBoxItem}">
             <Setter Property="Opacity" Value=".75" />
-            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>            
             <Style.Triggers>
                 <EventTrigger RoutedEvent="Mouse.MouseEnter">
                     <EventTrigger.Actions>
@@ -53,14 +53,72 @@
                 </EventTrigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate  TargetType="{x:Type Button}">
+                        <ControlTemplate.Resources>
+                            <Storyboard x:Key="Storyboard1">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="grid">
+                                    <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1.25"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="grid">
+                                    <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1.25"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="Storyboard2">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="grid">
+                                    <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="grid">
+                                    <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </ControlTemplate.Resources>
+                        <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Label Name="lbl" Content="{TemplateBinding Content}" Background="Transparent" Height="{TemplateBinding Height}"
+                           Width="{TemplateBinding Width}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard x:Name="Storyboard_Copy1_BeginStoryboard" Storyboard="{StaticResource Storyboard2}"/>
+                                </Trigger.ExitActions>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                                </Trigger.EnterActions>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="lbl" Value="#000000FF"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid ShowGridLines="false">
         <Grid.RowDefinitions>
             <RowDefinition Height="51"/>
             <RowDefinition Height="44"/>
             <RowDefinition Height="202"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="44"/>
+            <RowDefinition Height="652"/>
+            <RowDefinition Height="96"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -71,14 +129,17 @@
             <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btnClose" Grid.Row="1" Grid.Column="2" Background="Transparent" 
-                BorderBrush="Transparent" Click="btnClose_Click" >
+        <Button x:Name="btnClose" 
+                Grid.Row="1"
+                Grid.Column="2" 
+                Background="Transparent" 
+                BorderBrush="Transparent"
+                Click="btnClose_Click"
+                 Style="{DynamicResource ButtonStyle}">
             <Button.Content>
                 <Image  Source="photos/close.png"></Image>
             </Button.Content>
         </Button>
-
-
         <ListBox x:Name="listBoxStartItems" Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"
                  HorizontalAlignment="Center"
                  ItemTemplate ="{StaticResource listItemViewTemplate}" 
@@ -95,23 +156,44 @@
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
                                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                                Width="1200"
+                                Width="1260"
                                 />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
 
-        <Button x:Name="btnLeft" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Background="Transparent" 
-                BorderBrush="Transparent" Click="btnLeft_Click" >
-            <Button.Content>
-                <Image Source="Photos\listBoxLeft.png"></Image>
-            </Button.Content>
-        </Button>
-        <Button x:Name="btnRight" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center" Background="Transparent" 
-                BorderBrush="Transparent" Click="btnRight_Click" >
-            <Button.Content>
-                <Image Source="Photos\listBoxRight.png"></Image>
-            </Button.Content>
-        </Button>
+        <Grid Grid.Column="1" Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnLeft"
+                    Grid.Column="0" 
+                    Background="Transparent" 
+                    HorizontalAlignment="Right"
+                    BorderBrush="Transparent" 
+                    Click="btnLeft_Click" 
+                    Style="{DynamicResource ButtonStyle}">
+                <Button.Content>
+                    <Image Source="Photos\button_sel_l_sel.png" RenderTransformOrigin="0.5,0.5"></Image>
+                </Button.Content>
+            </Button>
+            <Button x:Name="btnRight"
+                    Grid.Column="2" 
+                    HorizontalAlignment="Left"
+                    Background="Transparent" 
+                    BorderBrush="Transparent"
+                    Click="btnRight_Click"
+                    Style="{DynamicResource ButtonStyle}">
+                <Button.Content>
+                    <Image Source="Photos\button_sel_l_sel.png" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <ScaleTransform ScaleX="-1"/>
+                        </Image.RenderTransform>
+                    </Image>
+                </Button.Content>
+            </Button>
+        </Grid>
     </Grid>
 </Window>

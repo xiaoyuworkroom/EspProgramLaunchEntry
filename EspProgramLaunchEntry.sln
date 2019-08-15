@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26228.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EspProgramLaunchEntry", "EspProgramLaunchEntry\EspProgramLaunchEntry.csproj", "{DF7BCE8E-4CBE-4646-9202-094ED8C9FD40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EspProgramLaunchEntryTestApp", "EspProgramLaunchEntryTestApp\EspProgramLaunchEntryTestApp.csproj", "{D01D5FA5-A41F-4A3F-9403-6F6B6DA8862A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppTest", "WpfAppTest\WpfAppTest.csproj", "{50929E1B-C8B2-4D2A-9963-690683AC72CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DF7BCE8E-4CBE-4646-9202-094ED8C9FD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF7BCE8E-4CBE-4646-9202-094ED8C9FD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF7BCE8E-4CBE-4646-9202-094ED8C9FD40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D01D5FA5-A41F-4A3F-9403-6F6B6DA8862A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D01D5FA5-A41F-4A3F-9403-6F6B6DA8862A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D01D5FA5-A41F-4A3F-9403-6F6B6DA8862A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D01D5FA5-A41F-4A3F-9403-6F6B6DA8862A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50929E1B-C8B2-4D2A-9963-690683AC72CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50929E1B-C8B2-4D2A-9963-690683AC72CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50929E1B-C8B2-4D2A-9963-690683AC72CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50929E1B-C8B2-4D2A-9963-690683AC72CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
