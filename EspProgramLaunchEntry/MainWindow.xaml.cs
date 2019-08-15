@@ -21,8 +21,8 @@ namespace EspProgramLaunchEntry
 
         public void Init()
         {
-            startItems  = UtilityXML.LoadFromXml<StartItems>(@"startItems.xml");
-            listBoxStartItems.ItemsSource = startItems;            
+            startItems = UtilityXML.LoadFromXml<StartItems>(@"startItems.xml");
+            listBoxStartItems.ItemsSource = startItems;
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

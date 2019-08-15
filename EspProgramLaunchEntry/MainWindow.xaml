@@ -25,7 +25,9 @@
 
         <Style x:Key="PhotoListItem" TargetType="{x:Type ListBoxItem}">
             <Setter Property="Opacity" Value=".75" />
-            <Setter Property="VerticalContentAlignment" Value="Top"/>            
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
             <Style.Triggers>
                 <EventTrigger RoutedEvent="Mouse.MouseEnter">
                     <EventTrigger.Actions>
@@ -154,9 +156,10 @@
                  >
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                    <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
                                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                                Width="1260"
                                 />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
