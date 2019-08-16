@@ -59,6 +59,13 @@ namespace EspProgramLaunchEntry
                 try
                 {
                     string exePath = startItem.ExePath;
+
+                    if (!exePath.Contains(":"))
+                    {
+                        var appPath = System.Environment.CurrentDirectory;
+                        exePath = string.Format(@"{0}/{1}", appPath, exePath.TrimStart('/'));
+                    }
+
                     Process.Start(exePath);
                 }
                 catch (Exception ex)

@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 
 namespace EspProgramLaunchEntry
@@ -21,10 +22,13 @@ namespace EspProgramLaunchEntry
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            /* 
-             * value = "file:///D:/etp/Works/ToolsRepository/EspDemoEntry/photos/fourthlesson.png"
-             */
             string uriStr = (string)value;
+            if(!uriStr.StartsWith("file:///"))
+            {
+                var appPath = System.Environment.CurrentDirectory;
+                uriStr = string.Format(@"file:///{0}/{1}", appPath, uriStr.TrimStart('/'));
+            }
+
             return Utility.CreateBitmapImage(uriStr);
         }
 
