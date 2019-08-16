@@ -1,0 +1,15 @@
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\bin\Release\WpfAppTest.exe.config
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\bin\Release\WpfAppTest.exe
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\bin\Release\WpfAppTest.pdb
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\WpfAppTest.csprojAssemblyReference.cache
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\MainWindow.g.cs
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\App.g.cs
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\WpfAppTest_MarkupCompile.cache
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\WpfAppTest_MarkupCompile.lref
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\MainWindow.baml
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\WpfAppTest.g.resources
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\WpfAppTest.Properties.Resources.resources
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\WpfAppTest.csproj.GenerateResource.cache
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\WpfAppTest.csproj.CoreCompileInputs.cache
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\WpfAppTest.exe
+C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Release\WpfAppTest.pdb

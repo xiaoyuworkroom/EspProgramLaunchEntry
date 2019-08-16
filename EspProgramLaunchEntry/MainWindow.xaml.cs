@@ -4,6 +4,9 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Configuration;
+
+using System.Linq;
 
 namespace EspProgramLaunchEntry
 {
@@ -12,7 +15,10 @@ namespace EspProgramLaunchEntry
     /// </summary>
     public partial class MainWindow : Window
     {
-        public StartItems startItems;
+        public StartItems StartItemsData;
+        private int m_listBoxShowItemsCount = 5;
+
+        private int m_startIndex = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -21,8 +27,21 @@ namespace EspProgramLaunchEntry
 
         public void Init()
         {
-            startItems = UtilityXML.LoadFromXml<StartItems>(@"startItems.xml");
-            listBoxStartItems.ItemsSource = startItems;
+            StartItemsData = UtilityXML.LoadFromXml<StartItems>(@"startItems.xml");
+            GetListBoxShowItemsCount();
+            UpdateListItems(m_startIndex);
+        }
+
+        public void GetListBoxShowItemsCount()
+        {
+            try
+            {
+                m_listBoxShowItemsCount = Convert.ToInt32(ConfigurationManager.AppSettings["ListBoxShowItemsCount"]);
+            }
+            catch (Exception)
+            {
+                m_listBoxShowItemsCount = 5;
+            }            
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -49,16 +68,34 @@ namespace EspProgramLaunchEntry
             }
         }
 
+        public void UpdateListItems(int start)
+        {
+            int takeCount = m_listBoxShowItemsCount;
+            listBoxStartItems.ItemsSource = StartItemsData.Skip(start).Take(takeCount).ToList();
+        }
+
         private void btnLeft_Click(object sender, RoutedEventArgs e)
         {
-            ScrollViewer scrollViewer = FV<ScrollViewer>(this.listBoxStartItems);
-            scrollViewer.PageLeft();
+            //ScrollViewer scrollViewer = FV<ScrollViewer>(this.listBoxStartItems);
+            //scrollViewer.PageLeft();
+            m_startIndex -= m_listBoxShowItemsCount;
+            if (m_startIndex < 0)
+            {
+                m_startIndex = 0;
+            }
+
+            UpdateListItems(m_startIndex);
         }
 
         private void btnRight_Click(object sender, RoutedEventArgs e)
         {
-            ScrollViewer scrollViewer = FV<ScrollViewer>(this.listBoxStartItems);
-            scrollViewer.PageRight();
+            //ScrollViewer scrollViewer = FV<ScrollViewer>(this.listBoxStartItems);
+            //scrollViewer.PageRight();
+            if (m_startIndex + m_listBoxShowItemsCount < StartItemsData.Count)
+            {
+                m_startIndex += m_listBoxShowItemsCount;
+            }
+            UpdateListItems(m_startIndex);
         }
 
         public static ci FV<ci>(DependencyObject o)
