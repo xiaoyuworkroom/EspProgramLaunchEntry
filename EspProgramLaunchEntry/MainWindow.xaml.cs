@@ -7,6 +7,7 @@ using System.Windows.Media;
 using System.Configuration;
 
 using System.Linq;
+using System.Collections.Generic;
 
 namespace EspProgramLaunchEntry
 {
@@ -17,6 +18,8 @@ namespace EspProgramLaunchEntry
     {
         public StartItems StartItemsData;
         private int m_listBoxShowItemsCount = 5;
+
+        private Dictionary<string, String> dictionary = new Dictionary<string, String>();
 
         private int m_startIndex = 0;
         public MainWindow()
@@ -51,28 +54,7 @@ namespace EspProgramLaunchEntry
 
         private void StartItemListSelection(object sender, SelectionChangedEventArgs e)
         {
-            var listBox = sender as ListBox;
-            var t = listBox.ActualHeight;
-            StartItem startItem = (sender as ListBox)?.SelectedItem as StartItem;
-            if (startItem != null)
-            {
-                try
-                {
-                    string exePath = startItem.ExePath;
-
-                    if (!exePath.Contains(":"))
-                    {
-                        var appPath = System.Environment.CurrentDirectory;
-                        exePath = string.Format(@"{0}/{1}", appPath, exePath.TrimStart('/'));
-                    }
-
-                    Process.Start(exePath);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(string.Format("配置文件信息错误: {0}", ex.Message), "异常信息");
-                }
-            }
+           
         }
 
         public void UpdateListItems(int start)
@@ -123,6 +105,44 @@ namespace EspProgramLaunchEntry
                 }
             }
             return null;
+        }
+
+        private void StackPanel_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            StartItem startItem = listBoxStartItems?.SelectedItem as StartItem;
+            if (startItem != null)
+            {
+                try
+                {
+                    string exePath = startItem.ExePath;
+                    String startedInfo = "";
+
+                    if (dictionary.TryGetValue(exePath, out startedInfo))
+                    {
+                        try
+                        {
+                            var startedProcess = Process.GetProcesses().FirstOrDefault(p => p.ProcessName + p.Id == startedInfo);
+                            if (startedProcess != null) return;
+                        }
+                        catch (Exception e1)
+                        {
+                            MessageBox.Show(string.Format("配置文件信息错误: {0}", e1.Message), "异常信息");
+                        }
+                    }
+                    if (!exePath.Contains(":"))
+                    {
+                        var appPath = System.Environment.CurrentDirectory;
+                        exePath = string.Format(@"{0}/{1}", appPath, exePath.TrimStart('/'));
+                    }
+
+                    var newProcess = Process.Start(exePath);
+                    dictionary[startItem.ExePath] = newProcess.ProcessName + newProcess.Id;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(string.Format("配置文件信息错误: {0}", ex.Message), "异常信息");
+                }
+            }
         }
     }
 }

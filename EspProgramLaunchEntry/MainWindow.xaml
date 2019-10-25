@@ -167,7 +167,7 @@
                     <StackPanel Orientation="Horizontal" 
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Center"
-                                    ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                    ScrollViewer.HorizontalScrollBarVisibility="Hidden" MouseUp="StackPanel_MouseUp"
                                     />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
