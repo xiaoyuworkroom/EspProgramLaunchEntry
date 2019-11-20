@@ -130,15 +130,30 @@
             <ColumnDefinition Width="44"/>
             <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
-        
-        <Image Grid.Row="1" Grid.Column="1" 
+
+        <WrapPanel
+            Grid.Row="1" Grid.Column="1">
+        <Image  
                Width="223"
                Height="75"
-               Source="Photos\LOGO中英.png" 
+               Source="Photos\wuxilogo.png" 
                RenderTransformOrigin="0.5,0.5" 
                HorizontalAlignment="Left">
         </Image>
-        
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15"
+                   FontFamily="Microsoft YaHei" Foreground="Black" TextDecorations="{x:Null}">
+            <Run Foreground="Black"></Run>
+            <Run Foreground="Black"></Run>
+            <Run Foreground="Black"></Run>
+            <Run Foreground="Black"></Run>
+            <Run Foreground="Black"></Run>
+            <Run Foreground="Black"></Run>
+            <Run Foreground="Black">此软件</Run>
+            <Run Foreground="#FFCD0404">中新科技(上海)有限公司</Run>
+            <Run Foreground="Black">提供</Run>
+            </TextBlock>
+        </WrapPanel>
         <Button x:Name="btnClose" 
                 Grid.Row="1"
                 Grid.Column="2" 

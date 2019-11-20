@@ -10,6 +10,5 @@ C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\MainWindow.baml
 C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.g.resources
 C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.Properties.Resources.resources
 C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.csproj.GenerateResource.cache
-C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.csproj.CoreCompileInputs.cache
 C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.exe
 C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.pdb
