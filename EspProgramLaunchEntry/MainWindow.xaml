@@ -118,7 +118,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="51"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="168"/>
+            <RowDefinition Height="128"/>
             <RowDefinition Height="652"/>
             <RowDefinition Height="96"/>
             <RowDefinition Height="*"/>
@@ -131,29 +131,20 @@
             <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
 
-        <WrapPanel
+        <StackPanel
             Grid.Row="1" Grid.Column="1">
-        <Image  
-               Width="223"
-               Height="75"
-               Source="Photos\wuxilogo.png" 
-               RenderTransformOrigin="0.5,0.5" 
-               HorizontalAlignment="Left">
-        </Image>
-
-        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15"
-                   FontFamily="Microsoft YaHei" Foreground="Black" TextDecorations="{x:Null}">
-            <Run Foreground="Black"></Run>
-            <Run Foreground="Black"></Run>
-            <Run Foreground="Black"></Run>
-            <Run Foreground="Black"></Run>
-            <Run Foreground="Black"></Run>
-            <Run Foreground="Black"></Run>
-            <Run Foreground="Black">此软件</Run>
-            <Run Foreground="#FFCD0404">中新科技(上海)有限公司</Run>
-            <Run Foreground="Black">提供</Run>
+            <Image  
+                   Width="500"
+                   Height="96"
+                   Source="Photos\wuxilogo.png" 
+                   RenderTransformOrigin="0.5,0.5" 
+                   HorizontalAlignment="Left">
+            </Image>
+            <TextBlock Width="500" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Center" FontSize="16"
+                   FontFamily="Microsoft YaHei" Foreground="Black" 
+                       TextDecorations="{x:Null}"><Run Foreground="Black" Text="版权归中新软件（上海）有限公司所有"/>
             </TextBlock>
-        </WrapPanel>
+        </StackPanel>
         <Button x:Name="btnClose" 
                 Grid.Row="1"
                 Grid.Column="2" 
