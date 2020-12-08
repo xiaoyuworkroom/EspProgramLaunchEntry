@@ -13,3 +13,17 @@ C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.csproj.Gen
 C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.csproj.CoreCompileInputs.cache
 C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.exe
 C:\zxhome\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.pdb
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\bin\Debug\WpfAppTest.exe.config
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\bin\Debug\WpfAppTest.exe
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\bin\Debug\WpfAppTest.pdb
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.csprojAssemblyReference.cache
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\MainWindow.g.cs
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\App.g.cs
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest_MarkupCompile.cache
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest_MarkupCompile.lref
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\MainWindow.baml
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.g.resources
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.Properties.Resources.resources
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.csproj.GenerateResource.cache
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.exe
+D:\Template\Works\EspProgramLaunchEntry\WpfAppTest\obj\Debug\WpfAppTest.pdb
